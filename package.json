@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "scripts": {
         "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+        "set.mm": "ts-node index.ts set.mm",
         "start": "ts-node index.ts"
     },
     "repository": {
