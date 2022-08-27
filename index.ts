@@ -1,36 +1,53 @@
 import checkmm, { Assertion, Expression } from 'checkmm';
-
-interface AssertionInfo {
-    labels: string[];
-    hypothesesExpressionText: string[];
-    disjvarText: string[];
-    conclusionExpressionText: string;
-}
+import { Deque, Pair } from 'checkmm/dist/std';
 
 interface LabelledAssertion {
-    label: string;
+    labels: string[];
     assertion: Assertion;
 }
 
-const assertionsAreEqual = (a1: AssertionInfo, a2: AssertionInfo) => {
-    if (a1.conclusionExpressionText !== a2.conclusionExpressionText) {
+const getHypothesesAsStringArray = (hypotheses: Deque<string>): string[] => {
+    // Consider only essential hypotheses, though I didn't notice any difference when I removed this step.
+    const essentialHypotheses = hypotheses.filter(hyp => !checkmm.hypotheses.get(hyp)!.second);
+    const expressions = essentialHypotheses.map(hyp => checkmm.hypotheses.get(hyp)!.first.join(' '));
+    return expressions.sort();
+};
+
+const getdisjvarAsStringArray = (disjvars: Set<Pair<string, string>>): string[] => {
+    return Array.from(disjvars)
+        .map(pair => [pair.first, pair.second].join(' '))
+        .sort();
+};
+
+const assertionsAreEqual = (a1: Assertion, a2: Assertion) => {
+    // Ensure conclusion expressions are equal
+    if (a1.expression.join(' ') !== a2.expression.join(' ')) {
         return false;
     }
 
-    if (!checkmm.std.arraysequal(a1.hypothesesExpressionText, a2.hypothesesExpressionText)) {
+    // Ensure hypotheses are equal
+    if (
+        !checkmm.std.arraysequal(getHypothesesAsStringArray(a1.hypotheses), getHypothesesAsStringArray(a2.hypotheses))
+    ) {
         return false;
     }
 
-    if (!checkmm.std.arraysequal(a1.disjvarText, a2.disjvarText)) {
+    // Ensure disjoint variables are equal
+    if (!checkmm.std.arraysequal(getdisjvarAsStringArray(a1.disjvars), getdisjvarAsStringArray(a2.disjvars))) {
         return false;
     }
 
     return true;
 };
 
-const assertionList: LabelledAssertion[] = [];
+interface AssertionListItem {
+    label: string;
+    assertion: Assertion;
+}
 
-const assertionMap = new Map<string, AssertionInfo[]>();
+const assertionList: AssertionListItem[] = [];
+
+const assertionMap = new Map<string, LabelledAssertion[]>();
 
 const { constructassertion, parsea } = checkmm;
 
@@ -44,16 +61,9 @@ checkmm.parsea = (label: string) => {
 checkmm.constructassertion = (label: string, expression: Expression) => {
     const assertion = constructassertion(label, expression);
     const conclusionExpressionText = expression.join(' ');
-    const assertionInfo: AssertionInfo = {
+    const labelledAssertion: LabelledAssertion = {
         labels: [label],
-        hypothesesExpressionText: assertion.hypotheses
-            .filter(hyp => !checkmm.hypotheses.get(hyp)!.second)
-            .map(hyp => checkmm.hypotheses.get(hyp)!.first.join(' '))
-            .sort(),
-        disjvarText: Array.from(assertion.disjvars)
-            .map(pair => [pair.first, pair.second].join(' '))
-            .sort(),
-        conclusionExpressionText,
+        assertion,
     };
 
     assertionList.push({ label, assertion });
@@ -61,16 +71,16 @@ checkmm.constructassertion = (label: string, expression: Expression) => {
         assertionMap.set(conclusionExpressionText, []);
     }
 
-    const assertionInfoArray = assertionMap.get(conclusionExpressionText)!;
+    const labelledAssertions = assertionMap.get(conclusionExpressionText)!;
 
-    for (const assertionInfoItem of assertionInfoArray) {
-        if (assertionsAreEqual(assertionInfoItem, assertionInfo)) {
+    for (const assertionInfoItem of labelledAssertions) {
+        if (assertionsAreEqual(assertionInfoItem.assertion, labelledAssertion.assertion)) {
             assertionInfoItem.labels.push(label);
             return assertion;
         }
     }
 
-    assertionInfoArray.push(assertionInfo);
+    labelledAssertions.push(labelledAssertion);
 
     return assertion;
 };
