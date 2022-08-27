@@ -13,11 +13,19 @@ interface LabelledAssertion {
 }
 
 const assertionsAreEqual = (a1: AssertionInfo, a2: AssertionInfo) => {
-    return (
-        a1.conclusionExpressionText === a2.conclusionExpressionText &&
-        checkmm.std.arraysequal(a1.hypothesesExpressionText, a2.hypothesesExpressionText) &&
-        checkmm.std.arraysequal(a1.disjvarText, a2.disjvarText)
-    );
+    if (a1.conclusionExpressionText !== a2.conclusionExpressionText) {
+        return false;
+    }
+
+    if (!checkmm.std.arraysequal(a1.hypothesesExpressionText, a2.hypothesesExpressionText)) {
+        return false;
+    }
+
+    if (!checkmm.std.arraysequal(a1.disjvarText, a2.disjvarText)) {
+        return false;
+    }
+
+    return true;
 };
 
 const assertionList: LabelledAssertion[] = [];
@@ -31,7 +39,7 @@ let axiomAndDefinitionCount = 0;
 checkmm.parsea = (label: string) => {
     parsea(label);
     ++axiomAndDefinitionCount;
-}
+};
 
 checkmm.constructassertion = (label: string, expression: Expression) => {
     const assertion = constructassertion(label, expression);
@@ -73,7 +81,9 @@ checkmm.main(process.argv.slice(1)).then(exitCode => {
     console.log(`Axiom and definition count ${axiomAndDefinitionCount}`);
     console.log();
 
-    console.log(`Each line contains the labels representing a group of repeated assertions, ordered by the first appearence`);
+    console.log(
+        `Each line contains the labels representing a group of repeated assertions, ordered by the first appearence`,
+    );
 
     let uniqueAssertionsWhichAreRepeated = 0;
     let totalAssertionsWhichAreRepeated = 0;
