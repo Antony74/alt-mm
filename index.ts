@@ -20,49 +20,28 @@ const assertionsAreEqual = (a1: AssertionInfo, a2: AssertionInfo) => {
     );
 };
 
-// const getHypotheses = (a: Assertion): string[] => {
-//     return a.hypotheses.map(label => checkmm.hypotheses.get(label)!.first.join(' '));
-// };
-
-// const assertionsAreEqual = (a1: Assertion, a2: Assertion): boolean => {
-//     // Compare expressions
-//     const expressionsEqual = checkmm.std.arraysequal(a1.expression, a2.expression);
-//     if (!expressionsEqual) {
-//         return false;
-//     }
-
-//     // Compare hypotheses
-//     const hypothesesEqual = checkmm.std.arraysequal(getHypotheses(a1).sort(), getHypotheses(a2).sort());
-//     if (!hypothesesEqual) {
-//         return false;
-//     }
-
-//     // Compare disjoint variables
-//     const disjvars = new Set(a1.disjvars);
-//     let missingDisjvar = false;
-//     a2.disjvars.forEach(disjvar => {
-//         missingDisjvar &&= disjvars.delete(disjvar);
-//     });
-
-//     if (missingDisjvar || disjvars.size) {
-//         return false;
-//     }
-
-//     return true;
-// };
-
 const assertionList: LabelledAssertion[] = [];
 
 const assertionMap = new Map<string, AssertionInfo[]>();
 
-const { constructassertion } = checkmm;
+const { constructassertion, parsea } = checkmm;
+
+let axiomAndDefinitionCount = 0;
+
+checkmm.parsea = (label: string) => {
+    parsea(label);
+    ++axiomAndDefinitionCount;
+}
 
 checkmm.constructassertion = (label: string, expression: Expression) => {
     const assertion = constructassertion(label, expression);
     const conclusionExpressionText = expression.join(' ');
     const assertionInfo: AssertionInfo = {
         labels: [label],
-        hypothesesExpressionText: assertion.hypotheses.map(hyp => checkmm.hypotheses.get(hyp)!.first.join(' ')).sort(),
+        hypothesesExpressionText: assertion.hypotheses
+            .filter(hyp => !checkmm.hypotheses.get(hyp)!.second)
+            .map(hyp => checkmm.hypotheses.get(hyp)!.first.join(' '))
+            .sort(),
         disjvarText: Array.from(assertion.disjvars)
             .map(pair => [pair.first, pair.second].join(' '))
             .sort(),
@@ -91,9 +70,31 @@ checkmm.constructassertion = (label: string, expression: Expression) => {
 checkmm.main(process.argv.slice(1)).then(exitCode => {
     process.exitCode = exitCode;
 
+    console.log(`Axiom and definition count ${axiomAndDefinitionCount}`);
+    console.log();
+
+    console.log(`Each line contains the labels representing a group of repeated assertions, ordered by the first appearence`);
+
+    let uniqueAssertionsWhichAreRepeated = 0;
+    let totalAssertionsWhichAreRepeated = 0;
+
     assertionList.forEach(labelledAssertion => {
-        const assertionInfoArray = assertionMap.get(labelledAssertion.assertion.expression.join(' '));
-        console.log(JSON.stringify(assertionInfoArray, null, 2));
-        console.log();
+        const label = labelledAssertion.label;
+        const assertionInfoArray = assertionMap.get(labelledAssertion.assertion.expression.join(' '))!;
+
+        const assertionInfo = assertionInfoArray.find(assertionInfoArray =>
+            assertionInfoArray.labels.filter(currentLabel => currentLabel === label),
+        )!;
+
+        // Print the label if it's the orginal such statement and has alternative proofs
+        if (assertionInfo.labels.length > 1 && assertionInfo.labels[0] === label) {
+            console.log(assertionInfo.labels.join(', '));
+            ++uniqueAssertionsWhichAreRepeated;
+            totalAssertionsWhichAreRepeated += assertionInfo.labels.length;
+        }
     });
+
+    console.log();
+    console.log(`Unique assertions which are repeated: ${uniqueAssertionsWhichAreRepeated}`);
+    console.log(`Total assertions which are repeated: ${totalAssertionsWhichAreRepeated}`);
 });
