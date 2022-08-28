@@ -58,29 +58,38 @@ checkmm.parsea = (label: string) => {
     ++axiomAndDefinitionCount;
 };
 
+const suffixFilters: string[] = [];
+//const suffixFilters: string[] = ['ALT', 'ALT2', 'ALT3', 'OLD', 'ALTN', 'OLDN', 'VD'];
+
 checkmm.constructassertion = (label: string, expression: Expression) => {
     const assertion = constructassertion(label, expression);
-    const conclusionExpressionText = expression.join(' ');
-    const labelledAssertion: LabelledAssertion = {
-        labels: [label],
-        assertion,
-    };
 
-    assertionList.push({ label, assertion });
-    if (!assertionMap.has(conclusionExpressionText)) {
-        assertionMap.set(conclusionExpressionText, []);
-    }
+    // We're interested in this assertion so long as it doesn't have particuar suffices
+    if (suffixFilters.filter(suffix => label.slice(-suffix.length) === suffix).length === 0) {
+        // We're intrested in this assertion
 
-    const labelledAssertions = assertionMap.get(conclusionExpressionText)!;
+        const conclusionExpressionText = expression.join(' ');
+        const labelledAssertion: LabelledAssertion = {
+            labels: [label],
+            assertion,
+        };
 
-    for (const assertionInfoItem of labelledAssertions) {
-        if (assertionsAreEqual(assertionInfoItem.assertion, labelledAssertion.assertion)) {
-            assertionInfoItem.labels.push(label);
-            return assertion;
+        assertionList.push({ label, assertion });
+        if (!assertionMap.has(conclusionExpressionText)) {
+            assertionMap.set(conclusionExpressionText, []);
         }
-    }
 
-    labelledAssertions.push(labelledAssertion);
+        const labelledAssertions = assertionMap.get(conclusionExpressionText)!;
+
+        for (const assertionInfoItem of labelledAssertions) {
+            if (assertionsAreEqual(assertionInfoItem.assertion, labelledAssertion.assertion)) {
+                assertionInfoItem.labels.push(label);
+                return assertion;
+            }
+        }
+
+        labelledAssertions.push(labelledAssertion);
+    }
 
     return assertion;
 };
