@@ -92,7 +92,7 @@ checkmm.main(process.argv.slice(1)).then(exitCode => {
     console.log();
 
     console.log(
-        `Each line contains the labels representing a group of repeated assertions, ordered by the first appearence`,
+        `Each line contains the labels representing a group of repeated assertions, ordered by the first appearance`,
     );
 
     let uniqueAssertionsWhichAreRepeated = 0;
