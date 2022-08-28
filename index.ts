@@ -59,7 +59,20 @@ checkmm.parsea = (label: string) => {
 };
 
 const suffixFilters: string[] = [];
-//const suffixFilters: string[] = ['ALT', 'ALT2', 'ALT3', 'OLD', 'ALTN', 'OLDN', 'VD'];
+
+// Omit names with ALT or OLD that appear to duplicate one without the marking; we already know they're alternatives.
+// const suffixFilters: string[] = ['ALT', 'ALT2', 'ALT3', 'OLD', 'ALTN', 'OLDN', 'VD'];
+
+const hypenTest = (existingLabel: string, label: string) => {
+    existingLabel;
+    label;
+    return true;
+};
+
+// const hypenTest = (existingLabel: string, label: string) => {
+//     // Omit names that only different because of a hyphen (ax-1, ax1).
+//     return existingLabel.split('-').join('') !== label.split('-').join('');
+// };
 
 checkmm.constructassertion = (label: string, expression: Expression) => {
     const assertion = constructassertion(label, expression);
@@ -83,7 +96,14 @@ checkmm.constructassertion = (label: string, expression: Expression) => {
 
         for (const assertionInfoItem of labelledAssertions) {
             if (assertionsAreEqual(assertionInfoItem.assertion, labelledAssertion.assertion)) {
-                assertionInfoItem.labels.push(label);
+                let passesHypenTest = true;
+                assertionInfoItem.labels.forEach(existingLabel => {
+                    passesHypenTest &&= hypenTest(existingLabel, label);
+                });
+
+                if (passesHypenTest) {
+                    assertionInfoItem.labels.push(label);
+                }
                 return assertion;
             }
         }
