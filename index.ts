@@ -102,10 +102,10 @@ checkmm.constructassertion = (label: string, expression: Expression) => {
 
     const labelledAssertions = assertionMap.get(conclusionExpressionText)!;
 
-    for (const labelledAssertion of labelledAssertions) {
-        if (assertionsAreEqual(labelledAssertion.assertion, labelledAssertion.assertion)) {
-            if (filterAssertion(label, labelledAssertion.labels)) {
-                labelledAssertion.labels.push(label);
+    for (const existingLabelledAssertion of labelledAssertions) {
+        if (assertionsAreEqual(existingLabelledAssertion.assertion, labelledAssertion.assertion)) {
+            if (filterAssertion(label, existingLabelledAssertion.labels)) {
+                existingLabelledAssertion.labels.push(label);
             }
             return assertion;
         }
@@ -131,12 +131,12 @@ checkmm.main(process.argv.slice(1)).then(exitCode => {
     let uniqueAssertionsWhichAreRepeated = 0;
     let totalAssertionsWhichAreRepeated = 0;
 
-    assertionList.forEach(labelledAssertion => {
-        const label = labelledAssertion.label;
-        const assertionInfoArray = assertionMap.get(labelledAssertion.assertion.expression.join(' '))!;
+    assertionList.forEach(assertionListItem => {
+        const label = assertionListItem.label;
+        const labelledAssertionArray = assertionMap.get(assertionListItem.assertion.expression.join(' '))!;
 
-        const assertionInfo = assertionInfoArray.find(assertionInfoArray =>
-            assertionInfoArray.labels.filter(currentLabel => currentLabel === label),
+        const assertionInfo = labelledAssertionArray.find(labelledAssertion =>
+            labelledAssertion.labels.filter(currentLabel => currentLabel === label),
         );
 
         // Print the label if it's the orginal such statement and has alternative proofs
