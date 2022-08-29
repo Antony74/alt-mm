@@ -58,56 +58,60 @@ checkmm.parsea = (label: string) => {
     ++axiomAndDefinitionCount;
 };
 
-const suffixFilters: string[] = [];
+const filterAssertion = (label: string, existingLabels: string[]): boolean => {
+    // Omit names with ALT or OLD that appear to duplicate one without the marking; we already know they're alternatives.
+    const suffixFilters: string[] = ['ALT', 'ALT2', 'ALT3', 'OLD', 'ALTN', 'OLDN', 'VD'];
+    const filterOnSuffices = suffixFilters.reduce((acc, suffix) => {
+        if (!acc) {
+            return false;
+        } else if (label.slice(-suffix.length) === suffix) {
+            return false;
+        } else {
+            return true;
+        }
+    }, true);
 
-// Omit names with ALT or OLD that appear to duplicate one without the marking; we already know they're alternatives.
-// const suffixFilters: string[] = ['ALT', 'ALT2', 'ALT3', 'OLD', 'ALTN', 'OLDN', 'VD'];
+    if (!filterOnSuffices) {
+        return false;
+    }
 
-const hypenTest = (existingLabel: string, label: string) => {
-    existingLabel;
-    label;
-    return true;
+    // Omit names that only different because of a hyphen (ax-1, ax1).
+    const filterOnHyphens = existingLabels.reduce((acc, existingLabel) => {
+        if (!acc) {
+            return false;
+        }
+        return existingLabel.split('-').join('') !== label.split('-').join('');
+    }, true);
+
+    return filterOnHyphens;
 };
-
-// const hypenTest = (existingLabel: string, label: string) => {
-//     // Omit names that only different because of a hyphen (ax-1, ax1).
-//     return existingLabel.split('-').join('') !== label.split('-').join('');
-// };
 
 checkmm.constructassertion = (label: string, expression: Expression) => {
     const assertion = constructassertion(label, expression);
 
-    // We're interested in this assertion so long as it doesn't have particuar suffices
-    if (suffixFilters.filter(suffix => label.slice(-suffix.length) === suffix).length === 0) {
-        // We're intrested in this assertion
+    const conclusionExpressionText = expression.join(' ');
+    const labelledAssertion: LabelledAssertion = {
+        labels: [label],
+        assertion,
+    };
 
-        const conclusionExpressionText = expression.join(' ');
-        const labelledAssertion: LabelledAssertion = {
-            labels: [label],
-            assertion,
-        };
+    assertionList.push({ label, assertion });
+    if (!assertionMap.has(conclusionExpressionText)) {
+        assertionMap.set(conclusionExpressionText, []);
+    }
 
-        assertionList.push({ label, assertion });
-        if (!assertionMap.has(conclusionExpressionText)) {
-            assertionMap.set(conclusionExpressionText, []);
-        }
+    const labelledAssertions = assertionMap.get(conclusionExpressionText)!;
 
-        const labelledAssertions = assertionMap.get(conclusionExpressionText)!;
-
-        for (const assertionInfoItem of labelledAssertions) {
-            if (assertionsAreEqual(assertionInfoItem.assertion, labelledAssertion.assertion)) {
-                let passesHypenTest = true;
-                assertionInfoItem.labels.forEach(existingLabel => {
-                    passesHypenTest &&= hypenTest(existingLabel, label);
-                });
-
-                if (passesHypenTest) {
-                    assertionInfoItem.labels.push(label);
-                }
-                return assertion;
+    for (const labelledAssertion of labelledAssertions) {
+        if (assertionsAreEqual(labelledAssertion.assertion, labelledAssertion.assertion)) {
+            if (filterAssertion(label, labelledAssertion.labels)) {
+                labelledAssertion.labels.push(label);
             }
+            return assertion;
         }
+    }
 
+    if (filterAssertion(label, [])) {
         labelledAssertions.push(labelledAssertion);
     }
 
@@ -133,10 +137,10 @@ checkmm.main(process.argv.slice(1)).then(exitCode => {
 
         const assertionInfo = assertionInfoArray.find(assertionInfoArray =>
             assertionInfoArray.labels.filter(currentLabel => currentLabel === label),
-        )!;
+        );
 
         // Print the label if it's the orginal such statement and has alternative proofs
-        if (assertionInfo.labels.length > 1 && assertionInfo.labels[0] === label) {
+        if (assertionInfo && assertionInfo.labels.length > 1 && assertionInfo.labels[0] === label) {
             console.log(assertionInfo.labels.join(', '));
             ++uniqueAssertionsWhichAreRepeated;
             totalAssertionsWhichAreRepeated += assertionInfo.labels.length;
