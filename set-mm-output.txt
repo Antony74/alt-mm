@@ -1,0 +1,667 @@
+Axiom and definition count 2692
+
+Each line contains the labels representing a group of repeated assertions, ordered by the first appearance
+a1ii, dummylink
+ax-mp, nic-stdmp, re1axmp, e0a
+ax-1, minimp-ax1, luklem5, ax1, tbw-ax2, retbwax2, re1tbw2, tb-ax2, wl-ax1, ax-frege1
+ax-2, minimp-ax2, ax2, re1ax2, wl-ax2, ax-frege2
+ax-3, con4, ax3, wl-ax3, ax3h
+mp2, e00
+a1i, wl-a1i, wl-impchain-a1-1
+imim2i, wl-imim2i
+id, idALT, id1, wl-id, frege27
+idd, frege26
+a1d, wl-a1d, wl-impchain-a1-2
+com12, wl-com12
+syl5, wl-syl5
+pm2.27, wl-pm2.27
+a1dd, wl-impchain-a1-3
+pm2.43, minimp-pm2.43, merlem11, luklem6, merco1lem9
+imim2, luklem8, bj-imim2ALT, wl-imim2, frege5
+imim1i, wl-imim1i
+imim1, luk-1, nic-luk1, tbw-ax1, re1luk1, retbwax1, re1tbw1, re2luk1, tb-ax1, ax-luk1, frege9
+pm2.04, luklem7, tbwlem1, re1ax2lem, wl-pm2.04, axfrege8, ax-frege8
+jarr, minimp-syllsimp, merco1lem4, frege11
+pm2.21, axin2, wl-pm2.21, frege38
+pm2.24, luk-3, nic-luk3, re1luk3, re2luk3, ax-luk3, frege36
+pm2.18, luk-2, nic-luk2, re1luk2, re2luk2, ax-luk2, frege43
+notnotr, wl-notnotr, axfrege31, ax-frege31, notnotrALT, notnotrALTVD, notnotrALT2
+notnot, axfrege41, ax-frege41
+con1, frege33
+con1i, wl-con1i
+pm2.24i, wl-pm2.24i
+con3, con3ALT, axfrege28, ax-frege28, con3ALT2, con3ALTVD
+ja, wl-ja
+pm2.01, axin1
+pm2.6, frege46
+peirce, tbw-ax3, retbwax3, re1tbw3, tb-ax3, bj-peirce
+bijust0, bj-bijust0
+dfbi1, dfbi1ALT
+biimp, frege52aid
+biimpr, frege57aid
+bicom1, frege55aid, frege55cor1a
+biid, axfrege54a, ax-frege54a
+imbi12, imbi12VD
+bitr3, bitr3VD
+pm4.81, pm4.81ALT
+imp5a, imp5aOLD
+ancomst, ancomstVD
+pm3.2, axia3
+simpl, simplOLD, axia1
+simpr, simprOLD, axia2
+intnanr, notatnand
+simplbi2comt, simplbi2comtVD
+syl2an2r, syl2an2rOLD
+ad3antlr, ad3antlrOLD
+ad4antr, ad4antrOLD
+ad4antlr, ad4antlrOLD
+ad5antr, ad5antrOLD
+ad5antlr, ad5antlrOLD
+ad6antr, ad6antrOLD
+ad6antlr, ad6antlrOLD
+ad7antr, ad7antrOLD
+ad7antlr, ad7antlrOLD
+ad8antr, ad8antrOLD
+ad8antlr, ad8antlrOLD
+ad9antr, ad9antrOLD
+ad9antlr, ad9antlrOLD
+ad10antr, ad10antrOLD
+ad10antlr, ad10antlrOLD
+adantl3r, ad5ant1345, adantlllr
+simplll, simplllOLD
+simpllr, simpllrOLD
+simp-4l, simp-4lOLD
+simp-4r, simp-4rOLD
+simp-5l, simp-5lOLD
+simp-5r, simp-5rOLD
+simp-6l, simp-6lOLD
+simp-6r, simp-6rOLD
+simp-7l, simp-7lOLD
+simp-7r, simp-7rOLD
+simp-8l, simp-8lOLD
+simp-8r, simp-8rOLD
+simp-9l, simp-9lOLD
+simp-9r, simp-9rOLD
+simp-10l, simp-10lOLD
+simp-10r, simp-10rOLD
+simp-11l, simp-11lOLD
+simp-11r, simp-11rOLD
+annotanannot, annotanannotOLD
+adant423OLD, ad4ant14, ad4ant14OLD
+orim12dALT, orim12d
+jaob, axio
+cases2, cases2ALT
+dfbi3, dfbi3OLD
+4exmid, 4exmidOLD
+anifp, axfrege58a, ax-frege58a
+3orcomb, 3orcombOLD
+3anan12, 3anan12OLD
+3ancoma, 3ancomaOLD
+3ancomb, 3ancombOLD
+3anrot, 3anrotOLD
+3anorOLD, 3anor
+3ianor, 3ianorOLD
+3impa, 3impaOLD
+3imp21, 3imp21OLD
+3comr, 3comrOLD
+3com23, 3com23OLD
+3adant1, 3adant1OLD
+3adant2, 3adant2OLD
+3adant3, 3adant3OLD
+simp1, simp1OLD
+simp2, simp2OLD, rp-simp2
+simp3, simp3OLD
+3simpa, 3simpaOLD
+3simpb, 3simpbOLD
+3simpc, 3simpcOLD
+syl3an2, syl3an2OLD
+syl3an3, syl3an3OLD
+ad4ant123, ad4ant123OLD
+ad4ant124, ad4ant124OLD
+3adant1l, 3adant1lOLD
+3adant1r, 3adant1rOLD
+3adant2l, 3adant2lOLD
+3adant2r, 3adant2rOLD
+3adant3l, 3adant3lOLD
+3adant3r, 3adant3rOLD
+ad4ant13, ad4ant13OLD
+ad4ant23, ad4ant23OLD
+ad4ant24, ad4ant24OLD
+ad5ant13, ad5ant13OLD
+ad5ant14, ad5ant14OLD
+ad5ant15, ad5ant15OLD
+ad5ant23, ad5ant23OLD
+ad5ant24, ad5ant24OLD
+ad5ant25, ad5ant25OLD
+simpl1, simpl1OLD
+simpl2, simpl2OLD
+simpl3, simpl3OLD
+simpr1, simpr1OLD
+simpr2, simpr2OLD
+simpr3, simpr3OLD
+simpll1, simpll1OLD
+simpll2, simpll2OLD
+simpll3, simpll3OLD
+simplr1, simplr1OLD
+simplr2, simplr2OLD
+simplr3, simplr3OLD
+simprl1, simprl1OLD
+simprl2, simprl2OLD
+simprl3, simprl3OLD
+simprr1, simprr1OLD
+simprr2, simprr2OLD
+simprr3, simprr3OLD
+simpl1l, simpl1lOLD
+simpl1r, simpl1rOLD
+simpl2l, simpl2lOLD
+simpl2r, simpl2rOLD
+simpl3l, simpl3lOLD
+simpl3r, simpl3rOLD
+simpr1l, simpr1lOLD
+simpr1r, simpr1rOLD
+simpr2l, simpr2lOLD
+simpr2r, simpr2rOLD
+simpr3l, simpr3lOLD
+simpr3r, simpr3rOLD
+simpl11, simpl11OLD
+simpl12, simpl12OLD
+simpl13, simpl13OLD
+simpl21, simpl21OLD
+simpl22, simpl22OLD
+simpl23, simpl23OLD
+simpl31, simpl31OLD
+simpl32, simpl32OLD
+simpl33, simpl33OLD
+simpr11, simpr11OLD
+simpr12, simpr12OLD
+simpr13, simpr13OLD
+simpr21, simpr21OLD
+simpr22, simpr22OLD
+simpr23, simpr23OLD
+simpr31, simpr31OLD
+simpr32, simpr32OLD
+simpr33, simpr33OLD
+pm3.2an3, pm3.2an3OLD
+3imp3i2an, 3imp3i2anOLD
+3an1rsOLD, 3an1rs
+3impexp, 3impexpVD
+ad5ant245, ad5ant245OLD
+ad5ant234, ad5ant234OLD
+ad5ant235, ad5ant235OLD
+ad5ant123, ad5ant123OLD
+ad5ant124, ad5ant124OLD
+ad5ant125, ad5ant125OLD
+ad5ant134, ad5ant134OLD
+ad5ant135, ad5ant135OLD
+ad5ant145, ad5ant145OLD
+syld3an1, syld3an1OLD
+syl3anl2, syl3anl2OLD
+syl3anr2, syl3anr2OLD
+syl2an23an, syl2an23anOLD
+3jao, 3jaoOLD
+nancom, wl-nancom
+nanbi1, nabi1, wl-nanbi1, wl-nanbi2
+nanbi2, nabi2
+tru, wl-impchain-mp-x, wl-impchain-com-1.x, wl-impchain-com-n.m, wl-impchain-a1-x
+falim, tbw-ax4, retbwax4, re1tbw4
+nic-ax, nic-axALT, renicax
+merco1lem15, rp-frege24, frege24
+ax-4, alim, ax4fromc4
+al2im, al2imVD
+eximii, bnj101
+19.38a, 19.38aOLD
+19.38b, 19.38bOLD
+nfbiit, nfbii2
+nfnbi, nfnbiOLD, wl-nfnbi
+nfnt, nfntOLDOLD
+exan, exanOLD
+19.26-3an, 19.26-3anOLD
+19.43, 19.43OLD
+nfimd, nfimdOLDOLD, nfimdOLD2OLD
+nfan, nfanOLD
+19.23v, 19.23vOLD
+19.36iv, 19.36ivOLD
+19.37iv, 19.37ivOLD
+19.41v, 19.41vOLD
+speimfw, speimfwALT
+sbequ8, sbequ8ALT
+ax-6, ax6, ax6fromc10
+ax-7, ax7
+equid, equid1, equid1ALT, frege54b
+nfequid, nfequid-o
+equvinv, equvinvOLD
+equvelv, equvelvOLD
+cbvexvw, bj-cbvexvv
+alcomiw, alcomiwOLD, ax11w
+hba1w, hba1wOLD
+aev2, aev2ALT
+ax-8, ax8, bj-ax8
+cleljust, cleljustALT, cleljustALT2
+ax-9, ax9, bj-ax9-2
+ax6dgen, ax-9d1
+ax13dgen4, ax13dgen4OLD
+nfa1, nfa1OLD, nfa1-o
+nfnf1, nfnf1OLD
+nfa2, nfa2OLD
+19.9d, 19.9dOLDOLD
+19.21t, 19.21tOLDOLD, bj-19.21t
+sb56, bj-sb56
+sb6, sb6OLD, bj-sb6
+sb5, bj-sb5, sb5ALT, sb5ALTVD
+nfs1v, nfs1vOLD, bj-nfs1v
+hbs1, hbs1OLD, bj-hbs1
+hbim1, hbim1OLD
+hbimd, hbimdOLD
+hban, hbanOLD
+hb3an, hb3anOLD
+axc4, ax-c4, axc5c4c711toc4
+axc7, ax-c7, axc5c7toc7, axc711toc7, axc5c711toc7, axc5c4c711toc7
+axc7e, axc7eOLD
+axc16g, axc16gOLD, axc16gALT, bj-axc16g16, axc16g-o
+axc16, axc16ALT, axc16b, bj-axc16b, ax-c16
+axc16nf, axc16nfOLD, axc16nfALT
+axc11v, axc11vOLD, bj-axc11v
+axc11rv, axc11rvOLD
+hbnt, hbntOLD
+hbexOLD, hbex
+nfex, nfexOLD
+nfald, nfaldOLD
+equs5aALT, equs5a
+equs5eALT, equs5e
+axc10, bj-axc10, ax-c10
+nfeqf2, nfeqf2OLD
+dveeq2, dveeq2ALT, wl-ax13lem1
+dveeq1, bj-ax6elem1
+axc9, ax-c9
+axc15, ax-c15
+axc11n, axi10, axc11n11, axc11n11r, ax-c11n, aecom-o, axc11nfromc11
+aecoms, aecoms-o
+naecoms, naecoms-o
+hbnae, hbnae-o
+dral2, dral2-o
+dral1, dral1ALT, dral1-o
+stdpc4, axfrege58b, ax-frege58b
+sb4b, wl-sb6nae
+dveel2, dveel2ALT
+axc14, bj-axc14, ax-c14
+sbequi, frege52b
+spsbim, frege58bcor
+sbidm, bj-sbidmOLD
+sbal1, wl-sbal1
+eujust, eujustALT
+euex, euexALT
+eumo, eumoOLD
+mo3, bj-mo3OLD
+ax-ext, zfcndext
+hbab1, bj-hbab1
+nfsab1, bj-nfsab1
+df-clel, bj-dfclel
+eqid, eqid1, axfrege54c, ax-frege54c
+eqeq1d, eqeq1dALT
+eqeqan12d, eqeqan12dALT
+eqtrd, int-eqtransd
+eleq2d, eleq2dALT
+abeq2, bj-abeq2
+abeq1, bj-abeq1
+abbi, bj-abbi
+abbi2i, bj-abbi2i
+abbii, bj-abbii
+abbid, bj-abbid
+abbi2dv, bj-abbi2dv
+abbi1dv, bj-abbi1dv
+abid1, bj-termab
+abid2, bj-abid2
+clabel, bj-clabel
+sbab, bj-sbab
+nfcjust, bj-nfcjust
+nfab1, bj-nfab1
+nfnfc, nfnfcALT
+ralimdaa, ralimda
+raleleq, raleleqALT
+vjust, bj-vjust
+elisset, bj-elisset
+elex2, elex2VD
+elex22, elex22VD
+ralcom4, bj-ralcom4
+rexcom4, bj-rexcom4
+ceqsalt, bj-ceqsalt
+ceqsalg, ceqsalgALT, bj-ceqsalg, bj-ceqsalgALT
+ceqsal, bj-ceqsal
+vtoclgf, bj-vtoclgfALT
+ru, ruALT, rusbcALT
+sseli, sseliALT
+sstr, sstrALT2VD, sstrALT2
+equncom, equncomVD
+equncomi, equncomiVD
+undif3, undif3VD
+inrab, bj-inrab2
+difid, difidALT
+abf, bj-abf
+csbprc, csbprcOLD, bj-csbprc
+sbceqg, bj-sbceqgALT
+keepel, ifcli
+dfsn2, dfsn2ALT
+csbsng, csbsngVD
+tpid3g, tpid3gVD
+snssg, snssgOLD
+ssdifsn, ssdifsnOLD
+snssi, snssiALTVD, snssiALT
+nfopd, nfopdALT
+pwsn, pwsnALT
+nfunid, nfunidALT2, nfunidALT
+unisn, unisnALT
+ax-rep, zfcndrep
+axrep1, bj-axrep1
+axrep2, bj-axrep2
+axrep3, bj-axrep3
+axrep4, bj-axrep4
+axrep5, bj-axrep5
+axsep, ax-sep, bj-axsep
+axnulALT, axnul, ax-nul
+nalset, bj-nalset
+ax-pow, zfcndpow, grothpw
+zfpow, bj-zfpow
+el, elALT, bj-el
+vpwex, grothpwex
+snexALT, snex
+p0ex, p0exALT
+dtru, dtruALT, dtruALT2, bj-dtru
+eunex, bj-eunex
+ralxfr, ralxfrALT
+dtrucor, bj-dtrucor
+dvdemo1, bj-dvdemo1
+zfpair, zfpair2
+axpr, ax-pr
+snelpwi, snelpwrVD
+relsn, relsnOLD
+relsnop, relsnopOLD
+relopabi, relopabiALT
+relopab, relopabVD
+opelresg, opelresgOLD
+opelres, opelresOLD
+brres, brresOLD
+mptss, mptssALT
+cnv0, cnv0OLD
+xpimasn, bj-xpima2sn
+cnvcnv, cnvcnvOLD
+cnvsng, cnvsngOLD
+cnvsn, cnvsnOLD
+ordelord, ordelordALT, ordelordALTVD
+ordtri3, ordtri3OLD
+onfr, onfrALT, onfrALTVD
+ordtr3, ordtr3OLD
+sucid, sucidALTVD, sucidALT, sucidVD
+suctr, suctrOLD, suctrALT, suctrALT2VD, suctrALT2, suctrALTcf, suctrALTcfVD, suctrALT3
+ordnbtwn, ordnbtwnOLD
+ordelinel, ordelinelOLD
+dfiota4, dfiota4OLD
+fvimacnv, fvimacnvALT
+resfunexg, resfunexgALT
+fnex, fnexALT
+elunirn, elunirnALT
+f1cofveqaeq, f1cofveqaeqALT
+f1owe, f1oweALT
+fnotovb, fnotovbOLD
+xpexg, xpexgALT
+snnex, snnexOLD
+abrexex, abrexexOLD
+abrexex2, abrexex2OLD
+suppfnss, suppfnssOLD
+tfr1, tfr1ALT
+tfr2, tfr2ALT
+1oex, bnj105
+iseri, iseriALT
+map0e, map0eOLD
+fdmfifsupp, fidmfisupp
+hartogs, ondomon
+ax-reg, zfcndreg
+en3lp, en3lpVD
+opthreg, opthregOLD
+axinf2, ax-inf2
+zfregs2, zfregs2VD
+r1pw, r1pwALT
+djuex, djuexALT
+alephf1, alephf1ALT
+dfac2, dfac2OLD
+pm110.643, pm110.643ALT
+infpss, infpssALT
+r1om, r1omALT
+ax-cc, axcc
+dominf, dominfac
+ax-dc, axdc
+ax-ac, axac, zfcndac
+ax-ac2, axac2
+cardeqv, grothac
+axaddf, ax-addf
+axmulf, ax-mulf
+axcnex, ax-cnex, cnex, cnexALT
+axresscn, ax-resscn
+ax1cn, ax-1cn
+axicn, ax-icn
+axaddcl, ax-addcl, addcl
+axaddrcl, ax-addrcl, readdcl
+axmulcl, ax-mulcl, mulcl
+axmulrcl, ax-mulrcl, remulcl
+axmulcom, ax-mulcom, mulcom
+axaddass, ax-addass, addass, cnncvsaddassdemo
+axmulass, ax-mulass, mulass, cnncvsmulassdemo
+axdistr, ax-distr, adddi
+axi2m1, ax-i2m1
+ax1ne0, ax-1ne0
+ax1rid, ax-1rid
+axrnegex, ax-rnegex
+axrrecex, ax-rrecex
+axcnre, ax-cnre
+axpre-lttri, ax-pre-lttri
+axpre-lttrn, ax-pre-lttrn
+axpre-ltadd, ax-pre-ltadd
+axpre-mulgt0, ax-pre-mulgt0
+axpre-sup, ax-pre-sup
+reex, reexALT
+0cn, 0cnALT
+0re, 0reALT
+axlttrn, lttr
+addcom, cnaddcom
+renegcl, renegclALT
+le2addd, leadd12dd
+1div0, 1div0apr
+nnexALT, nnex
+nnind, nnindALT
+1p1e2, 1p1e2apr1
+addltmul, addltmulALT
+nn0ge2m1nn, nn0ge2m1nnALT
+zex, zexALT
+nn0ind, nn0indALT, nn0ind-raph
+decex, decexOLD
+deceq1, deceq1OLD
+deceq2, deceq2OLD
+deccl, decclOLD
+decnncl, decnnclOLD
+dec0h, dec0hOLD
+decnncl2, decnncl2OLD
+declt, decltOLD
+decsuc, decsucOLD
+decle, decleOLD
+decleh, declecOLD
+decsucc, decsuccOLD
+decma, decmaOLD
+decma2c, decma2cOLD
+decadd, decaddOLD
+decsubi, decsubiOLD
+decmul1, decmul1OLD
+decmul2c, decmul2cOLD
+decmul10add, decmul10addOLD
+5p5e10, 5p5e10bOLD
+6p4e10, 6p4e10bOLD
+6p5e11, 6p5e11OLD
+7p3e10, 7p3e10bOLD
+7p4e11, 7p4e11OLD
+8p2e10, 8p2e10bOLD
+8p3e11, 8p3e11OLD
+9p2e11, 9p2e11OLD
+5t3e15, 5t3e15OLD
+5t4e20, 5t4e20OLD
+5t5e25, 5t5e25OLD
+6t5e30, 6t5e30OLD
+6t6e36, 6t6e36OLD
+8t5e40, 8t5e40OLD
+8t6e48, 8t6e48OLD
+9t11e99, 9t11e99OLD
+uzind4, uzind4ALT
+qex, qexALT
+xrge0neqmnf, xrge0neqmnfOLD
+ioounsn, ioounsnOLD
+fz0ssnn0, fzssnn0
+quoremnn0, quoremnn0ALT
+addmodlteq, addmodlteqALT
+hashf, hashfOLD
+ccat2s1fvw, ccat2s1fvwALT
+trcleq2lem, trcleq2lemRP
+dmtrclfv, dmtrclfvRP
+absneg, cnncvsabsnegdemo
+pwm1geoser, pwm1geoserALT
+rucALT, ruc
+sqrt2irrlem, sqrt2irrlemOLD
+3dvdsdec, 3dvdsdecOLD
+3lcm2e6woprm, 3lcm2e6
+vfermltl, vfermltlALT
+prmgap, prmgaplcm, prmgapprmo
+139prm, 139prmALT
+sloteq, bj-evaleq
+ndxarg, bj-ndxarg
+ndxid, ndxidOLD, bj-ndxid
+pleid, pleidOLD
+otpsbas, otpsbasOLD
+otpstset, otpstsetOLD
+otpsle, otpsleOLD
+0rest, bj-rest00
+f1rhm0to0, f1rhm0to0ALT
+cnfldfun, cnfldfunALT
+restsn, bj-restsn0
+abscncf, abscncfALT
+iblabslem, iblabsnclem
+cniccibl, cnicciblnc
+ftc2, ftc2nc
+pilem3, pilem3OLD
+sineq0, sineq0ALT
+isosctrlem1, isosctrlem1ALT
+chordthm, chordthmALT
+amgmlem, amgmlemALT
+perpdragALT, perpdrag
+upgr0eop, upgr0eopALT
+upgr1eop, upgr1eopALT
+usgredg2, usgredg2ALT
+usgredgprv, usgredgprvALT
+usgrnloopv, usgrnloopvALT
+usgrnloop, usgrnloopALT
+usgrnloop0, usgrnloop0ALT
+usgredg2vtxeu, usgredg2vtxeuALT
+usgredgleord, usgredgleordALT
+cplgruvtxb, cplgruvtxbOLD
+vtxdusgr0edgnel, vtxdusgr0edgnelALT
+clwwlkn0, clwwlkn0OLD
+ex-natded5.13, ex-natded5.13-2
+ex-natded9.20, ex-natded9.20-2
+ex-natded9.26, ex-natded9.26-2
+nmounbseqi, nmounbseqiALT
+nmobndseqi, nmobndseqiALT
+bcsiALT, bcsiHIL
+omlsi, pjomli
+pjpj0i, pjpji
+chjassi, qlax3i
+pjcompi, pjvi
+nmopsetretALT, nmopsetretHIL
+nmopub2tALT, nmopub2tHIL
+nmlnop0iALT, nmlnop0iHIL
+abrexdomjm, abrexdom
+abrexdom2jm, abrexdom2
+xrge0tmdOLD, xrge0tmd
+isrnsigaOLD, isrnsiga
+tgoldbachgt, ax-tgoldbachgt
+bnj521, bj-disjcsn
+bnj538, bnj538OLD
+bnj18eq1, bnj1318
+extt, bj-extru
+bj-a1k, rp-simp2-frege
+bj-curry, bj-peircecurry
+bj-consensus, bj-consensusALT
+bj-babygodel, bj-godellob
+bj-2alim, 2alim
+bj-2exim, 2exim
+bj-2albi, 2albi
+bj-2exbi, 2exbi
+bj-ssbid2, bj-ssbid2ALT
+bj-ssbid1, bj-ssbid1ALT
+bj-modald, pm10.251
+bj-alrim, stdpc5t
+bj-equsal1t, wl-equsal1t
+bj-xpima1sn, bj-xpima1snALT
+bj-nuliota, bj-nuliotaALT
+axc11n-16, axc11next
+ax12inda2ALT, ax12inda2
+3dimlem3, 3dimlem3OLDN
+3dimlem4, 3dimlem4OLDN
+pexmidN, pexmidALTN
+ltrnmw, ltrnmwOLD
+tendopl2, tendospdi2
+dihmeetALTN, dihmeet
+rntrclfvOAI, rntrclfvRP, rntrclfv
+rmspecsqrtnq, rmspecsqrtnqOLD
+ifpbiidcor, frege54cor1a
+brfvid, brfvidRP
+fvilbd, fvilbdRP
+0he, 0heALT
+rp-frege25, frege25
+axfrege52a, ax-frege52a
+frege55lem2a, frege55a
+axfrege52c, ax-frege52c
+compne, compneOLD
+exbir, exbirVD
+3impexpbicom, 3impexpbicomVD
+3impexpbicomi, 3impexpbicomiVD
+3ornot23, 3ornot23VD
+orbi1r, orbi1rVD
+3orbi123, 3orbi123VD
+syl5imp, syl5impVD
+imbi13, imbi13VD
+ee33, ee33VD
+con5, con5VD
+vk15.4j, vk15.4jVD
+ssralv2, ssralv2VD
+alrim3con13v, 19.21a3con13vVD
+rspsbc2, rspsbc2VD
+tratrb, tratrbVD
+sbcssOLD, sbcssgVD
+onfrALTlem5, onfrALTlem5VD
+onfrALTlem4, onfrALTlem4VD
+csbeq2gOLD, csbeq2gVD
+19.41rg, 19.41rgVD
+2pm13.193, 2pm13.193VD
+hbimpg, hbimpgVD
+hbalg, hbalgVD
+hbexg, hbexgVD
+ax6e2eq, ax6e2eqVD
+ax6e2nd, ax6e2ndVD, ax6e2ndALT
+ax6e2ndeq, ax6e2ndeqVD, ax6e2ndeqALT
+2sb5nd, 2sb5ndVD, 2sb5ndALT
+2uasbanh, 2uasbanhVD
+e2ebind, e2ebindVD, e2ebindALT
+trsspwALT, trsspwALT2, trsspwALT3
+sspwtr, sspwtrALT, sspwtrALT2
+csbingOLD, csbingVD
+csbresgOLD, csbresgVD
+csbrngOLD, csbrngVD
+snsslVD, snssl
+unipwrVD, unipwr
+sspwimp, sspwimpVD, sspwimpcf, sspwimpcfVD, sspwimpALT, sspwimpALT2
+restuni3, restuni6
+mapss2, mapssbi
+fnfvimad, fnfvima2
+climd, clim2d
+volicorecl, volicore
+atbiffatnnb, atbiffatnnbalt
+tgoldbach, tgoldbachOLD
+altgsumbc, altgsumbcALT
+
+Unique assertions which are repeated: 661
+Total assertions which are repeated: 1501
