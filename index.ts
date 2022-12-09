@@ -1,3 +1,4 @@
+import fs from 'fs/promises';
 import checkmm, { Assertion, Deque, Pair, Expression } from 'checkmm';
 
 interface LabelledAssertion {
@@ -117,15 +118,20 @@ checkmm.constructassertion = (label: string, expression: Expression) => {
     return assertion;
 };
 
-checkmm.main(process.argv.slice(1)).then(exitCode => {
+const logArray: string[] = [];
+
+const log = (msg = '') => {
+    console.log(msg);
+    logArray.push(msg);
+};
+
+checkmm.main(process.argv.slice(1, 3)).then(exitCode => {
     process.exitCode = exitCode;
 
-    console.log(`Axiom and definition count ${axiomAndDefinitionCount}`);
-    console.log();
+    log(`Axiom and definition count ${axiomAndDefinitionCount}`);
+    log();
 
-    console.log(
-        `Each line contains the labels representing a group of repeated assertions, ordered by the first appearance`,
-    );
+    log(`Each line contains the labels representing a group of repeated assertions, ordered by the first appearance`);
 
     let uniqueAssertionsWhichAreRepeated = 0;
     let totalAssertionsWhichAreRepeated = 0;
@@ -140,13 +146,18 @@ checkmm.main(process.argv.slice(1)).then(exitCode => {
 
         // Print the label if it's the orginal such statement and has alternative proofs
         if (assertionInfo && assertionInfo.labels.length > 1 && assertionInfo.labels[0] === label) {
-            console.log(assertionInfo.labels.join(', '));
+            log(assertionInfo.labels.join(', '));
             ++uniqueAssertionsWhichAreRepeated;
             totalAssertionsWhichAreRepeated += assertionInfo.labels.length;
         }
     });
 
-    console.log();
-    console.log(`Unique assertions which are repeated: ${uniqueAssertionsWhichAreRepeated}`);
-    console.log(`Total assertions which are repeated: ${totalAssertionsWhichAreRepeated}`);
+    log();
+    log(`Unique assertions which are repeated: ${uniqueAssertionsWhichAreRepeated}`);
+    log(`Total assertions which are repeated: ${totalAssertionsWhichAreRepeated}`);
+
+    const outputFilename = process.argv[3];
+    if (outputFilename) {
+        fs.writeFile(outputFilename, logArray.join('\n'));
+    }
 });
