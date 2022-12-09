@@ -1,4 +1,4 @@
-Axiom and definition count 2692
+Axiom and definition count 2710
 
 Each line contains the labels representing a group of repeated assertions, ordered by the first appearance
 a1ii, dummylink
@@ -35,7 +35,6 @@ ja, wl-ja
 pm2.01, axin1
 pm2.6, frege46
 peirce, tbw-ax3, retbwax3, re1tbw3, tb-ax3, bj-peirce
-bijust0, bj-bijust0
 biimp, frege52aid
 biimpr, frege57aid
 bicom1, frege55aid, frege55cor1a
@@ -45,20 +44,19 @@ simpl, axia1
 simpr, axia2
 intnanr, notatnand
 adantl3r, ad5ant1345, adantlllr
+curryax, bj-peircecurry
 jaob, axio
 anifp, axfrege58a
 simp2, rp-simp2
-nancom, wl-nancom
-nanbi1, nabi1, wl-nanbi1, wl-nanbi2
-nanbi2, nabi2
 tru, wl-impchain-mp-x, wl-impchain-com-1.x, wl-impchain-com-n.m, wl-impchain-a1-x
 falim, tbw-ax4, retbwax4, re1tbw4
 nic-ax, renicax
 merco1lem15, rp-frege24, frege24
 ax-4, alim, ax4fromc4
 eximii, bnj101
-nfbiit, nfbii2
 nfnbi, wl-nfnbi
+alexan, exintr
+exdistrv, bj-eeanvw
 ax-6, ax6fromc10
 equid, equid1, frege54b
 nfequid, nfequid-o
@@ -70,8 +68,6 @@ ax6dgen, ax-9d1
 nfa1, nfa1-o
 19.21t, bj-19.21t
 sb56, bj-sb56
-sb6, bj-sb6
-sb5, bj-sb5
 nfs1v, bj-nfs1v
 hbs1, bj-hbs1
 axc4, axc5c4c711toc4
@@ -94,6 +90,7 @@ axc14, bj-axc14
 sbequi, frege52b
 spsbim, frege58bcor
 sbal1, wl-sbal1
+nexmo, nexmo1
 ax-ext, zfcndext
 hbab1, bj-hbab1
 nfsab1, bj-nfsab1
@@ -125,7 +122,6 @@ ceqsal, bj-ceqsal
 inrab, bj-inrab2
 abf, bj-abf
 csbprc, bj-csbprc
-keepel, ifcli
 ax-rep, zfcndrep
 axrep1, bj-axrep1
 axrep2, bj-axrep2
@@ -137,11 +133,11 @@ nalset, bj-nalset
 ax-pow, zfcndpow, grothpw
 zfpow, bj-zfpow
 el, bj-el
-vpwex, grothpwex
 dtru, bj-dtru
-eunex, bj-eunex
 dtrucor, bj-dtrucor
 dvdemo1, bj-dvdemo1
+vpwex, grothpwex
+eunex, bj-eunex
 zfpair, zfpair2
 xpimasn, bj-xpima2sn
 suctr, suctrALTcf
@@ -193,9 +189,8 @@ abrexdom2jm, abrexdom2
 tgoldbachgt, ax-tgoldbachgt
 bnj521, bj-disjcsn
 bnj18eq1, bnj1318
-extt, bj-extru
+extru, bj-extru
 bj-a1k, rp-simp2-frege
-bj-curry, bj-peircecurry
 bj-babygodel, bj-godellob
 bj-2alim, 2alim
 bj-2exim, 2exim
@@ -220,5 +215,5 @@ climd, clim2d
 volicorecl, volicore
 atbiffatnnb, atbiffatnnbalt
 
-Unique assertions which are repeated: 218
-Total assertions which are repeated: 518
+Unique assertions which are repeated: 213
+Total assertions which are repeated: 506
