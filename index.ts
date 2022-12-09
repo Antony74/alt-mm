@@ -1,5 +1,4 @@
-import checkmm, { Assertion, Expression } from 'checkmm';
-import { Deque, Pair } from 'checkmm/dist/std';
+import checkmm, { Assertion, Deque, Pair, Expression } from 'checkmm';
 
 interface LabelledAssertion {
     labels: string[];
