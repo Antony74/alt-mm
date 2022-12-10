@@ -1,6 +1,7 @@
 {
     "name": "alt-mm",
     "version": "1.0.0",
+    "bin": "cli.js",
     "scripts": {
         "curl": "curl https://raw.githubusercontent.com/metamath/set.mm/develop/set.mm -o set.mm",
         "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
