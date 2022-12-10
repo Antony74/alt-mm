@@ -1,12 +1,13 @@
 {
     "name": "alt-mm",
     "version": "1.0.0",
-    "bin": "cli.js",
+    "bin": "dist/index.js",
     "scripts": {
+        "build": "tsc",
         "curl": "curl https://raw.githubusercontent.com/metamath/set.mm/develop/set.mm -o set.mm",
         "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-        "set.mm": "ts-node index.ts set.mm set-mm-output.txt",
-        "start": "ts-node index.ts"
+        "set.mm": "ts-node ./src/index.ts set.mm set-mm-output.txt",
+        "start": "ts-node ./src/index.ts"
     },
     "repository": {
         "type": "git",
