@@ -9,3 +9,8 @@ const altmm = child_process.exec(cmd);
 altmm.stdout.on('data', data => {
     console.log(data);
 });
+
+altmm.stderr.on('data', data => {
+    console.error(data);
+});
+
