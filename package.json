@@ -1,7 +1,7 @@
 {
     "name": "alt-mm",
     "version": "1.0.0",
-    "bin": "dist/index.js",
+    "main": "dist/checkmm.js",
     "scripts": {
         "build": "tsc",
         "curl": "curl https://raw.githubusercontent.com/metamath/set.mm/develop/set.mm -o set.mm",
