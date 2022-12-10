@@ -1,5 +1,5 @@
 {
-    "name": "alt-mm",
+    "name": "altmm",
     "version": "1.0.0",
     "bin": "dist/index.js",
     "main": "dist/index.js",
