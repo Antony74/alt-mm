@@ -125,39 +125,44 @@ const log = (msg = '') => {
     logArray.push(msg);
 };
 
-checkmm.main(process.argv.slice(1, 3)).then(exitCode => {
-    process.exitCode = exitCode;
+checkmm
+    .main(process.argv.slice(1, 3))
+    .then(exitCode => {
+        process.exitCode = exitCode;
 
-    log(`Axiom and definition count ${axiomAndDefinitionCount}`);
-    log();
+        log(`Axiom and definition count ${axiomAndDefinitionCount}`);
+        log();
 
-    log(`Each line contains the labels representing a group of repeated assertions, ordered by the first appearance`);
-
-    let uniqueAssertionsWhichAreRepeated = 0;
-    let totalAssertionsWhichAreRepeated = 0;
-
-    assertionList.forEach(assertionListItem => {
-        const label = assertionListItem.label;
-        const labelledAssertionArray = assertionMap.get(assertionListItem.assertion.expression.join(' '))!;
-
-        const assertionInfo = labelledAssertionArray.find(labelledAssertion =>
-            labelledAssertion.labels.filter(currentLabel => currentLabel === label),
+        log(
+            `Each line contains the labels representing a group of repeated assertions, ordered by the first appearance`,
         );
 
-        // Print the label if it's the orginal such statement and has alternative proofs
-        if (assertionInfo && assertionInfo.labels.length > 1 && assertionInfo.labels[0] === label) {
-            log(assertionInfo.labels.join(', '));
-            ++uniqueAssertionsWhichAreRepeated;
-            totalAssertionsWhichAreRepeated += assertionInfo.labels.length;
+        let uniqueAssertionsWhichAreRepeated = 0;
+        let totalAssertionsWhichAreRepeated = 0;
+
+        assertionList.forEach(assertionListItem => {
+            const label = assertionListItem.label;
+            const labelledAssertionArray = assertionMap.get(assertionListItem.assertion.expression.join(' '))!;
+
+            const assertionInfo = labelledAssertionArray.find(labelledAssertion =>
+                labelledAssertion.labels.filter(currentLabel => currentLabel === label),
+            );
+
+            // Print the label if it's the orginal such statement and has alternative proofs
+            if (assertionInfo && assertionInfo.labels.length > 1 && assertionInfo.labels[0] === label) {
+                log(assertionInfo.labels.join(', '));
+                ++uniqueAssertionsWhichAreRepeated;
+                totalAssertionsWhichAreRepeated += assertionInfo.labels.length;
+            }
+        });
+
+        log();
+        log(`Unique assertions which are repeated: ${uniqueAssertionsWhichAreRepeated}`);
+        log(`Total assertions which are repeated: ${totalAssertionsWhichAreRepeated}`);
+
+        const outputFilename = process.argv[3];
+        if (outputFilename) {
+            fs.writeFile(outputFilename, logArray.join('\n'));
         }
-    });
-
-    log();
-    log(`Unique assertions which are repeated: ${uniqueAssertionsWhichAreRepeated}`);
-    log(`Total assertions which are repeated: ${totalAssertionsWhichAreRepeated}`);
-
-    const outputFilename = process.argv[3];
-    if (outputFilename) {
-        fs.writeFile(outputFilename, logArray.join('\n'));
-    }
-});
+    })
+    .catch(console.error);

@@ -1,7 +1,7 @@
 {
     "name": "alt-mm",
     "version": "1.0.0",
-    "bin": "dist/index.js",
+    "bin": "altmmCli.js",
     "main": "dist/index.js",
     "scripts": {
         "build": "tsc",

@@ -95,7 +95,9 @@ const log = (msg = '') => {
     console.log(msg);
     logArray.push(msg);
 };
-checkmm_1.default.main(process.argv.slice(1, 3)).then(exitCode => {
+checkmm_1.default
+    .main(process.argv.slice(1, 3))
+    .then(exitCode => {
     process.exitCode = exitCode;
     log(`Axiom and definition count ${axiomAndDefinitionCount}`);
     log();
@@ -120,4 +122,5 @@ checkmm_1.default.main(process.argv.slice(1, 3)).then(exitCode => {
     if (outputFilename) {
         promises_1.default.writeFile(outputFilename, logArray.join('\n'));
     }
-});
+})
+    .catch(console.error);
